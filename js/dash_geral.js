@@ -1,6 +1,6 @@
 function DashGeralFactory() {
     var user_str = localStorage.getItem("user_logado");
-    // implements if condition to verify if the user is logged
+    // TODO: implements if condition to verify if the user is logged
     
     HeaderNome(user_str)
     HeaderFoto(user_str)
@@ -15,7 +15,7 @@ function DashGeralFactory() {
 
 function DashParceiroFactory() {
     var user_str = localStorage.getItem("user_logado");
-    // implements if condition to verify if the user is logged
+    // TODO: implements if condition to verify if the user is logged
     
     HeaderNome(user_str)
     HeaderFoto(user_str)
@@ -24,7 +24,7 @@ function DashParceiroFactory() {
 
 function HeaderNome(user_str) {
     if (user_str == null) {
-        location="index.html"
+        location="home.html"
     } else {
         var user_json = JSON.parse(user_str);
         document.getElementById("txtnome").innerHTML = user_json.nome +" ("+user_json.racf+")"
@@ -34,7 +34,7 @@ function HeaderNome(user_str) {
 function HeaderFoto(user_str) {
 
     if (user_str == null) {
-        location="index.html"
+        location="home.html"
     } else {
         var user_json = JSON.parse(user_str);
         document.getElementById("txtfoto").innerHTML = '<img src="images/'+ user_json.foto + '" alt="" width="65" height="53" class="d-inline-block align-top">'
@@ -51,6 +51,7 @@ function LoadParceiros() {
 
 function preencherComboParceiros(lista){
     var saida ="";
+    saida += "<option value='0'>Selecione um parceiro</option>";
     for (let index = 0; index < lista.length; index++) {
         saida+=
         "<option value='"+ lista[index].id_agente + "'>" + lista[index].nome_agente + "</option>";

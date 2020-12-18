@@ -154,7 +154,7 @@ function carregarDash(){
     
     setTimeout(function(){
         window.location.href = 'dashboard_parceiro.html';
-     }, 1200);
+     }, 2000);
 }
 
 function montarDashParceiro() {
